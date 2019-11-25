@@ -28,21 +28,27 @@ ARGV3=$3 # Third argument is Plugin installation folder
 ARGV4=$4 # Forth argument is Plugin version
 ARGV5=$5 # Fifth argument is Base folder of LoxBerry
 
+echo "<INFO> Getting Nextcloud Sourcen from https://download.nextcloud.com"
+/usr/bin/wget --progress=dot:mega -t 10 -O REPLACELBPHTMLDIR/nextcloud.zip https://download.nextcloud.com/server/releases/nextcloud-17.0.1.zip
+if [ ! -f REPLACELBPHTMLDIR/nextcloud.zip ]; then
+    echo "<FAIL> Something went wrong while trying to download Nextcloud Sources."
+    exit 1
+else
+    echo "<OK> Nextcloud Soruces downloaded successfully."
+fi
+
 # Unzipping Nextcloud Sources
 echo "<INFO> Unzipping Nextcloud Sources..."
-/usr/bin/unzip -d /tmp /tmp/nextcloud.zip
-rm -v /tmp/nextcloud.zip
+/usr/bin/unzip -d REPLACELBPHTMLDIR REPLACELBPHTMLDIR/nextcloud.zip
+rm -v REPLACELBPHTMLDIR/nextcloud.zip
 echo "<INFO> Installing Nextcloud Sources..."
-mv -v /tmp/nextcloud/* $ARGV5/webfrontend/html/plugins/$ARGV3/
-mv -v /tmp/nextcloud/.* $ARGV5/webfrontend/html/plugins/$ARGV3/
-rm -r -v /tmp/nextcloud
+mv -v REPLACELBPHTMLDIR/nextcloud/* REPLACELBPHTMLDIR
+mv -v REPLACELBPHTMLDIR/nextcloud/.* REPLACELBPHTMLDIR
+rm -r -v REPLACELBPHTMLDIR/nextcloud
 
 # Move Dummy Config file to installation and replacing dummy vars
 echo "<INFO> Installing Dummy Config..."
 ln -s $ARGV5/config/plugins/$ARGV3/config.php $ARGV5/webfrontend/html/plugins/$ARGV3/config/config.php
-
-#/bin/sed -i "s:REPLACEFOLDERNAME:$ARGV3:" $ARGV5/config/plugins/$ARGV3/config.php
-#/bin/sed -i "s:REPLACEINSTALLFOLDER:$ARGV5:" $ARGV5/config/plugins/$ARGV3/config.php
 
 # Exit with Status 0
 exit 0
