@@ -1,4 +1,2 @@
-# LoxBerry-Plugin-Owncloud
-A LoxBerry Plugin: http://plugins.loxberry.de/
-
-For Details visit http://www.loxwiki.eu:80/x/GoK4
+# LoxBerry-Plugin-Nextcloud
+A LoxBerry Plugin: https://www.loxwiki.eu/x/FQmcAw
