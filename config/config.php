@@ -275,7 +275,7 @@ $CONFIG = array(
  *
  * Defaults to ``core/skeleton`` in the Nextcloud directory.
  */
-'skeletondirectory' => '',
+'skeletondirectory' => 'REPLACELBPHTMLDIR/core/skeleton',
 
 /**
  * If your user backend does not allow password resets (e.g. when it's a
