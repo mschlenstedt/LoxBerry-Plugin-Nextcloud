@@ -40,11 +40,11 @@ fi
 # Unzipping Nextcloud Sources
 echo "<INFO> Unzipping Nextcloud Sources..."
 /usr/bin/unzip -d REPLACELBPHTMLDIR REPLACELBPHTMLDIR/nextcloud.zip
-rm -v REPLACELBPHTMLDIR/nextcloud.zip
+rm REPLACELBPHTMLDIR/nextcloud.zip
 echo "<INFO> Installing Nextcloud Sources..."
-mv -v REPLACELBPHTMLDIR/nextcloud/* REPLACELBPHTMLDIR
-mv -v REPLACELBPHTMLDIR/nextcloud/.* REPLACELBPHTMLDIR
-rm -r -v REPLACELBPHTMLDIR/nextcloud
+mv REPLACELBPHTMLDIR/nextcloud/* REPLACELBPHTMLDIR
+mv REPLACELBPHTMLDIR/nextcloud/.* REPLACELBPHTMLDIR
+rm -r REPLACELBPHTMLDIR/nextcloud
 
 # Move Dummy Config file to installation and replacing dummy vars
 echo "<INFO> Installing Dummy Config..."
