@@ -1,1 +1,8 @@
 php-gd
+php-intl
+php-json
+php-curl
+php-mbstring
+php-imagick 
+php-xml
+php-zip

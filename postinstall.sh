@@ -29,12 +29,12 @@ ARGV4=$4 # Forth argument is Plugin version
 ARGV5=$5 # Fifth argument is Base folder of LoxBerry
 
 echo "<INFO> Getting Nextcloud Sourcen from https://download.nextcloud.com"
-/usr/bin/wget --progress=dot:mega -t 10 -O REPLACELBPHTMLDIR/nextcloud.zip https://download.nextcloud.com/server/releases/nextcloud-17.0.1.zip
+/usr/bin/wget --progress=dot:mega -t 10 -O REPLACELBPHTMLDIR/nextcloud.zip https://download.nextcloud.com/server/releases/latest.zip
 if [ ! -f REPLACELBPHTMLDIR/nextcloud.zip ]; then
     echo "<FAIL> Something went wrong while trying to download Nextcloud Sources."
     exit 1
 else
-    echo "<OK> Nextcloud Soruces downloaded successfully."
+    echo "<OK> Nextcloud Sources downloaded successfully."
 fi
 
 # Unzipping Nextcloud Sources
